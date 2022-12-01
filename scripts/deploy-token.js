@@ -15,7 +15,7 @@ async function main() {
 
   // We get the contract to deploy
   const PancakeContract = await hre.ethers.getContractFactory("PancakeERC20");
-  const pancakeContract = await PancakeContract.deploy("Hello, Hardhat!");
+  const pancakeContract = await PancakeContract.deploy();
 
   await pancakeContract.deployed();
 
