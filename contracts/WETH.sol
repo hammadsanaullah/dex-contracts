@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.4.18;
+
 /**
  *Submitted for verification at Etherscan.io on 2017-12-12
 */

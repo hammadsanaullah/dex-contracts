@@ -1,6 +1,11 @@
+// SPDX-License-Identifier: GPL-3.0
 pragma solidity =0.5.16;
 
-contract BEP20USDT is Context, IBEP20, Ownable {
+import "./interfaces/IERC20.sol";
+import "./libraries/Context.sol"
+import "./libraries/SafeMath.sol";
+
+contract BEP20USDT is Context, IERC20, Ownable {
   using SafeMath for uint256;
 
   mapping (address => uint256) private _balances;
