@@ -2,7 +2,8 @@
 pragma solidity =0.5.16;
 
 import "./interfaces/IERC20.sol";
-import "./libraries/Context.sol"
+import "./libraries/Context.sol";
+import "./libraries/Ownable.sol";
 import "./libraries/SafeMath.sol";
 
 contract ERC20Token is Context, IERC20, Ownable {
