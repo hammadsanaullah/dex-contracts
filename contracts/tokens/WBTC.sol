@@ -2,11 +2,11 @@
 pragma solidity =0.5.16;
 
 import "../interfaces/IERC20.sol";
-import "../libraries/Context.sol";
 import "../libraries/Ownable.sol";
+import "../libraries/Context.sol";
 import "../libraries/SafeMath.sol";
 
-contract DAI is Context, IERC20, Ownable {
+contract WBTC is Context, IERC20, Ownable {
   using SafeMath for uint256;
 
   mapping (address => uint256) private _balances;
@@ -19,10 +19,10 @@ contract DAI is Context, IERC20, Ownable {
   string public _name;
 
   constructor() public {
-    _name = "Dai Token";
-    _symbol = "DAI";
+    _name = "BTCB Token";
+    _symbol = "BTCB";
     _decimals = 18;
-    _totalSupply = 10000000 * 10**18;
+    _totalSupply = 9001000000000000000000;
     _balances[msg.sender] = _totalSupply;
 
     emit Transfer(address(0), msg.sender, _totalSupply);

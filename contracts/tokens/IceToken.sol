@@ -2,6 +2,8 @@
 pragma solidity ^0.8.0;
 
 import "../interfaces/IAnySwapV3ERC20.sol";
+import "../interfaces/IApprovalReceiver.sol";
+import "../interfaces/ITransferReceiver.sol";
 import "../interfaces/IERC20.sol";
 import "../libraries/SafeERC20.sol";
 
